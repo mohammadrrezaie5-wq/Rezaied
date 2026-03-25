@@ -1,0 +1,1001 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمدرضا رضائی | متخصص بازاریابی و استراتژیست کسب‌وکار</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --dark-orange: #E85D04;
+            --light-orange: #FAA307;
+            --cream: #FFF3E0;
+            --dark: #1A1A2E;
+            --darker: #0F0F1A;
+            --text-light: #F5F5F5;
+            --text-muted: #B8B8B8;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--darker);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #1a0f0a 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(25%, 25%) scale(1.1); }
+        }
+
+        /* Hero Section - Full Width Image */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: linear-gradient(180deg, transparent 0%, rgba(26,26,46,0.8) 100%);
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(to top, var(--darker) 0%, transparent 100%);
+        }
+
+        .hero-content {
+            padding: 3rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .name-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            animation: slideInUp 1s ease;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--light-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 2;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.4s both;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            animation: slideInUp 1s ease 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--primary-orange);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background: var(--primary-orange);
+        }
+
+        .section-tag::before { right: 120%; }
+        .section-tag::after { left: 120%; }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        /* Experience Timeline - Right Aligned */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-right: 3rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+            text-align: right;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -8px;
+            top: 0.5rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            border: 4px solid var(--darker);
+            box-shadow: 0 0 20px rgba(255,107,53,0.5);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary-orange);
+            transform: translateX(-10px);
+            box-shadow: 0 10px 40px rgba(255,107,53,0.2);
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-list {
+            list-style: none;
+        }
+
+        .timeline-list li {
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        .timeline-list li::before {
+            content: '▸';
+            position: absolute;
+            right: 0;
+            color: var(--primary-orange);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(26,26,46,0.5));
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            text-align: right;
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 60px rgba(255,107,53,0.3);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255,107,53,0.2);
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Trust Section - Collaboration Images */
+        .trust-section {
+            background: linear-gradient(135deg, rgba(255,107,53,0.05), rgba(26,26,46,0.3));
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            margin: 4rem auto;
+            border: 1px solid rgba(255,107,53,0.2);
+            max-width: 1400px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .trust-category {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,107,53,0.15);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .trust-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .trust-category:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,107,53,0.15);
+        }
+
+        .trust-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .trust-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .trust-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .trust-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trust-image-wrapper:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
+        }
+
+        .trust-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .trust-image-wrapper:hover img {
+            transform: scale(1.1);
+        }
+
+        .trust-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-image-wrapper:hover .trust-image-overlay {
+            opacity: 1;
+        }
+
+        .trust-image-text {
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1), transparent);
+            border-radius: 30px;
+            padding: 4rem;
+            margin-top: 4rem;
+            border: 1px solid rgba(255,107,53,0.2);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,107,53,0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: rotate(360deg);
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,107,53,0.2);
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-orange), var(--light-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-image-container {
+                height: 60vh;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                right: 0;
+            }
+
+            .timeline-item {
+                padding-right: 2rem;
+            }
+
+            .timeline-dot {
+                right: -8px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Hero Section - Full Width Image -->
+    <section class="hero">
+        <div class="hero-image-container">
+            <img src="https://s17.uupload.ir/files/rezaied/Picsart_26-03-24_22-19-54-147.jpg" alt="محمدرضا رضائی" class="hero-image">
+            <div class="hero-image-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="name-badge">متخصص بازاریابی و استراتژیست کسب‌وکار</div>
+            <h1 class="hero-title">محمدرضا رضائی</h1>
+            <p class="hero-description">
+                علاقه‌مندی به دنیای کسب‌وکار از ۱۵ سالگی آغاز شد. با مطالعه مستمر کتب تخصصی و گذراندن دوره‌های آموزشی متعدد در حوزه بازاریابی، فروش و مدیریت، مسیر حرفه‌ای‌سازی را پیگیری کردم. حضور در دوره‌های تخصصی تهران و آنلاین — از جمله تسلط به فروش محمد ربانی و بیزینس کوچینگ مسیح جوادی — زمینه‌ساز ترکیب دانش نظری با تجربه عملی در فضای فیزیکی کسب‌وکار شد.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">۴۰+</span>
+                    <span class="stat-label">کسب‌وکار</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">۲۵+</span>
+                    <span class="stat-label">وکیل همکار</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">۱۴۰۳</span>
+                    <span class="stat-label">شروع فعالیت رسمی</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header fade-in">
+            <span class="section-tag">سوابق حرفه‌ای</span>
+            <h2 class="section-title">سوابق شغلی</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">۱۴۰۴ — تاکنون</span>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">مدیر مرکز رضائی</h3>
+                    <ul class="timeline-list">
+                        <li>اولین مرکز تخصصی تولیدات رسانه‌ای وکلای دادگستری</li>
+                        <li>همکاری فعال با بیش از ۲۵ وکیل پایه یک دادگستری</li>
+                        <li>طراح استراتژی مارکتینگ بیش از ۴۰ کسب‌وکار در سال ۱۴۰۴</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">۱۴۰۲</span>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">مجری تولیدات رسانه‌ای</h3>
+                    <ul class="timeline-list">
+                        <li>مدیر رسانه — مجتمع تجاری تفریحی تورک مال</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">۱۴۰۴</span>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">مدیر مارکتینگ</h3>
+                    <ul class="timeline-list">
+                        <li>شرکت استراتژی پزشکی</li>
+                        <li>دپارتمان ملکی</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-year">فعالیت بنیان‌گذارانه</span>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">موسس سایت سجو</h3>
+                    <ul class="timeline-list">
+                        <li>پلتفرم تخصصی معرفی وکیل در ارومیه</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries">
+        <div class="section-header fade-in">
+            <span class="section-tag">حوزه‌های فعالیت</span>
+            <h2 class="section-title">صنوف همکار</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-number">۰۱</span>
+                <div class="service-icon"><i class="fas fa-gem"></i></div>
+                <h3 class="service-title">طلا و جواهرات</h3>
+                <p class="service-desc">استراتژی‌های تخصصی برای برندهای لوکس و جواهرسازی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۲</span>
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3 class="service-title">املاک و مستغلات</h3>
+                <p class="service-desc">بازاریابی تخصصی برای پروژه‌های مسکونی و تجاری</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۳</span>
+                <div class="service-icon"><i class="fas fa-clock"></i></div>
+                <h3 class="service-title">گالری‌های ساعت و کالاهای لوکس</h3>
+                <p class="service-desc">پرزنت و فروش محصولات گران‌قیمت و کالکشن‌های خاص</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۴</span>
+                <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                <h3 class="service-title">وکالت و خدمات حقوقی</h3>
+                <p class="service-desc">تولید محتوای تخصصی و برندینگ برای وکلای دادگستری</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۵</span>
+                <div class="service-icon"><i class="fas fa-couch"></i></div>
+                <h3 class="service-title">مبلمان و دکوراسیون داخلی</h3>
+                <p class="service-desc">بازاریابی برای برندهای مبلمان و طراحی داخلی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۶</span>
+                <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3 class="service-title">خدمات پزشکی و درمانی</h3>
+                <p class="service-desc">استراتژی‌های مارکتینگ برای کلینیک‌ها و مراکز درمانی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۷</span>
+                <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                <h3 class="service-title">برندهای شخصی</h3>
+                <p class="service-desc">پرسونال برندینگ برای متخصصین و مشاهیر</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۸</span>
+                <div class="service-icon"><i class="fas fa-industry"></i></div>
+                <h3 class="service-title">کارخانجات تولیدی</h3>
+                <p class="service-desc">بازاریابی B2B برای واحدهای تولیدی و صنعتی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۹</span>
+                <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3 class="service-title">مشاورین و مدرسین</h3>
+                <p class="service-desc">برندینگ تخصصی برای مدرسین و مشاورین حرفه‌ای</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۱۰</span>
+                <div class="service-icon"><i class="fas fa-spa"></i></div>
+                <h3 class="service-title">سالن و کلینیک‌های زیبایی</h3>
+                <p class="service-desc">استراتژی‌های جذب مشتری برای مراکز زیبایی</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header fade-in">
+            <span class="section-tag">خدمات تخصصی</span>
+            <h2 class="section-title">حوزه‌های خدمات</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-number">۰۱</span>
+                <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                <h3 class="service-title">طرح‌های بازاریابی و توسعه شبکه ارتباطی</h3>
+                <p class="service-desc">طراحی و اجرای استراتژی‌های فیزیکی و آنلاین برای رشد کسب‌وکار</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۲</span>
+                <div class="service-icon"><i class="fas fa-smile"></i></div>
+                <h3 class="service-title">بهبود تجربه مشتری</h3>
+                <p class="service-desc">طراحی سفر مشتری و نقاط تماس بهینه برای افزایش رضایت</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۳</span>
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3 class="service-title">طراحی و سئو وب‌سایت</h3>
+                <p class="service-desc">توسعه وب‌سایت‌های تجاری و بهینه‌سازی موتورهای جستجو</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۴</span>
+                <div class="service-icon"><i class="fab fa-instagram"></i></div>
+                <h3 class="service-title">تولید محتوای اینستاگرام</h3>
+                <p class="service-desc">مدیریت پیج و تولید محتوای استراتژیک برای شبکه‌های اجتماعی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۵</span>
+                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3 class="service-title">کمپین‌های برند و فروش</h3>
+                <p class="service-desc">افزایش آگاهی از برند و کمپین‌های تبدیل‌محور</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۶</span>
+                <div class="service-icon"><i class="fas fa-gem"></i></div>
+                <h3 class="service-title">پرزنتور و مذاکره‌کننده کالاهای لوکس</h3>
+                <p class="service-desc">تخصص در ارائه و فروش محصولات گران‌قیمت و لوکس</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۷</span>
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <h3 class="service-title">مدیریت سیستم فروش و داخلی</h3>
+                <p class="service-desc">طراحی فرآیندها و سیستم‌های عملیاتی برای بهینه‌سازی</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-number">۰۸</span>
+                <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3 class="service-title">اکوسیستم‌سازی چندجانبه</h3>
+                <p class="service-desc">ایجاد شبکه‌های هم‌افزا بین اصناف مشترک و مکمل</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section - Collaboration Images -->
+    <section class="trust-section" id="trust">
+        <div class="section-header fade-in">
+            <span class="section-tag">قابی از اعتمادها</span>
+            <h2 class="section-title">همکاری‌های موفق</h2>
+        </div>
+
+        <div class="trust-grid">
+            <!-- Business Collaborations -->
+            <div class="trust-category">
+                <div class="trust-header">
+                    <div class="trust-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="trust-title">همکاری با بیزینس‌ها</h3>
+                </div>
+                <div class="trust-images">
+                    <div class="trust-image-wrapper">
+                        <img src="https://s31.uupload.ir/files/rezaied/۲۰۲۶۰۳۲۵_۱۵۳۸۱۱.jpg" alt="همکاری با بیزینس‌ها - تصویر ۱">
+                        <div class="trust-image-overlay">
+                            <span class="trust-image-text">پروژه‌های موفق بازاریابی</span>
+                        </div>
+                    </div>
+                    <div class="trust-image-wrapper">
+                        <img src="https://s31.uupload.ir/files/rezaied/۲۰۲۶۰۳۲۵_۱۶۳۱۰۸.jpg" alt="همکاری با بیزینس‌ها - تصویر ۲">
+                        <div class="trust-image-overlay">
+                            <span class="trust-image-text">استراتژی‌های تخصصی</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lawyers Collaborations -->
+            <div class="trust-category">
+                <div class="trust-header">
+                    <div class="trust-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3 class="trust-title">همکاری با وکلا و حقوقدان‌ها</h3>
+                </div>
+                <div class="trust-images">
+                    <div class="trust-image-wrapper" style="grid-column: 1 / -1;">
+                        <img src="https://s31.uupload.ir/files/rezaied/۲۰۲۶۰۳۲۵_۱۶۰۷۰۰.jpg" alt="همکاری با وکلا و حقوقدان‌ها">
+                        <div class="trust-image-overlay">
+                            <span class="trust-image-text">تولیدات رسانه‌ای تخصصی وکالت</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <div class="section-header fade-in">
+                <span class="section-tag">ارتباط با من</span>
+                <h2 class="section-title">راه‌های ارتباطی</h2>
+            </div>
+
+            <div class="contact-grid">
+                <a href="https://wa.link/3crpxg" class="contact-item" target="_blank">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <span class="contact-label">واتساپ</span>
+                    <span class="contact-value">ارسال پیام</span>
+                </a>
+
+                <a href="https://www.instagram.com/rezaie.mohammadr" class="contact-item" target="_blank">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                    <span class="contact-label">اینستاگرام بیزینس</span>
+                    <span class="contact-value">@rezaie.mohammadr</span>
+                </a>
+
+                <a href="https://www.instagram.com/mohammadr.rezaie" class="contact-item" target="_blank">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                    <span class="contact-label">اینستاگرام وکلا</span>
+                    <span class="contact-value">@mohammadr.rezaie</span>
+                </a>
+
+                <a href="https://rubika.ir/Mohammadr_rezaie" class="contact-item" target="_blank">
+                    <div class="contact-icon"><i class="fas fa-comment"></i></div>
+                    <span class="contact-label">روبیکا</span>
+                    <span class="contact-value">Mohammadr_rezaie</span>
+                </a>
+
+                <a href="tel:09330171918" class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <span class="contact-label">تماس مستقیم</span>
+                    <span class="contact-value">۰۹۳۳۰۱۷۱۹۱۸</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">MOHAMMADREZA REZAIE</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+            © ۱۴۰۴ — تمامی حقوق محفوظ است
+        </p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.timeline-item, .service-card, .fade-in, .trust-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
